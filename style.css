@@ -19,8 +19,22 @@ button{font:inherit}
   border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;background:#fff
 }
 .brand{
-  flex:0 0 auto;font-weight:900;font-size:clamp(17px,1.45vw,22px);
-  padding:0 14px;color:#111;white-space:nowrap
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  width:clamp(150px,15vw,235px);
+  height:56px;
+  padding:6px 12px;
+  color:#111;
+  white-space:nowrap;
+}
+.brand img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:44px;
+  object-fit:contain;
+  object-position:left center;
 }
 .brand span{color:var(--green)}
 #courseTabs{
@@ -165,7 +179,12 @@ button{font:inherit}
 }
 @media(max-width:700px){
   .top{flex-wrap:wrap}
-  .brand{font-size:17px;padding:0 10px}
+  .brand{
+    width:clamp(145px,46vw,200px);
+    height:50px;
+    padding:5px 10px;
+  }
+  .brand img{max-height:38px}
   #courseTabs{width:100%;order:3;height:43px;border-top:1px solid var(--line)}
   .course{height:43px;flex:1 0 33.333%;padding:0 7px;font-size:12px}
   .top-actions{display:none}
@@ -186,7 +205,8 @@ button{font:inherit}
   .lesson-footer{flex-direction:column;align-items:stretch}
 }
 @media(max-width:390px){
-  .brand{font-size:15px}
+  .brand{width:155px;height:46px;padding:5px 8px}
+  .brand img{max-height:34px}
   .lesson-area{padding-left:10px;padding-right:10px}
   .lesson-area h1{font-size:23px}
   .inline-editor{font-size:11px}
