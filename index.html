@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a3975">
+  <link rel="icon" href="assets/ict-al-firdaus-transparent.png">
+  <meta name="description" content="WebCode Academy — belajar HTML, CSS, dan JavaScript dengan materi dan playground.">
+  <title>WebCode Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./" aria-label="ICT Al Firdaus - Fun Coding Schools"><img src="assets/ict-al-firdaus-transparent.png" alt="ICT Al Firdaus - Fun Coding Schools"></a>
+  <nav id="courseTabs">
+    <button class="course active" data-course="html">HTML</button>
+    <button class="course" data-course="css">CSS</button>
+    <button class="course" data-course="javascript">JAVASCRIPT</button>
+  </nav>
+  <div class="brand-space" aria-hidden="true"></div><div class="top-actions">
+    <button id="exportBtn">Export</button>
+    <button id="importBtn">Import</button>
+    <input id="importFile" type="file" accept=".json" hidden>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="progress-card">
+      <b id="courseName">HTML</b>
+      <div class="progress"><i id="progressBar"></i></div>
+      <small id="progressText">0%</small>
+    </div>
+    <div id="lessonNav"></div>
+  </aside>
+
+  <main class="lesson-area">
+    <div id="lessonContent"></div>
+  </main>
+
+  <aside class="playground">
+    <div class="pg-head">
+      <b>Try it Yourself</b>
+      <div>
+        <button id="resetBtn">Reset</button>
+        <button id="runBtn" class="primary">Run ▶</button>
+      </div>
+    </div>
+    <div class="editor-tabs">
+      <button class="editor-tab active" data-editor="html">HTML</button>
+      <button class="editor-tab" data-editor="css">CSS</button>
+      <button class="editor-tab" data-editor="js">JS</button>
+    </div>
+    <textarea id="htmlEditor" class="editor"></textarea>
+    <textarea id="cssEditor" class="editor hidden"></textarea>
+    <textarea id="jsEditor" class="editor hidden"></textarea>
+    <div class="pg-actions">
+      <span>Ctrl+Enter = Run · Tab = indent</span>
+      <span id="autosave">Auto saved</span>
+    </div>
+    <div class="preview-title">Result</div>
+    <iframe id="preview" sandbox="allow-scripts allow-forms"></iframe>
+    <div class="task-panel">
+      <div class="task-title">Tasks — realtime</div>
+      <div id="tasks"></div>
+    </div>
+  </aside>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./sw.js").catch(()=>{});}</script>
+</body>
+</html>

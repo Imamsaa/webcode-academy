@@ -1,0 +1,9 @@
+{
+  "name": "WebCode Academy",
+  "short_name": "WebCode",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071117",
+  "theme_color": "#04aa6d",
+  "description": "Belajar HTML, CSS, dan JavaScript dengan materi dan playground."
+}

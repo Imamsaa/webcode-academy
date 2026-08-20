@@ -1,0 +1,26 @@
+<article class="material">
+<div class="lesson-badge">JavaScript · Async</div>
+<h2>1. Apa itu JavaScript Async Await?</h2>
+<p>async/await membuat alur asynchronous lebih mudah dibaca.</p>
+<h2>2. Konsep yang perlu kamu kuasai</h2>
+<ul><li>async membuat function mengembalikan Promise.</li><li>await menunggu Promise selesai di dalam async function.</li><li>try/catch dapat dipakai untuk error handling.</li></ul>
+<h2>3. Sintaks / contoh dasar</h2>
+<pre><code>async function ambilData() {
+  const response = await fetch(&quot;data.json&quot;);
+  const data = await response.json();
+  console.log(data);
+}</code></pre>
+<div class="teacher-note"><b>Perhatikan:</b> Gunakan async/await saat beberapa langkah asynchronous perlu dibaca berurutan.</div>
+<h2>4. Bedah contoh</h2>
+<ol>
+<li>Baca kode dari atas ke bawah.</li>
+<li>Tunjuk bagian yang menjadi struktur utama.</li>
+<li>Ubah satu bagian lalu tekan <b>Run</b>.</li>
+<li>Bandingkan hasil sebelum dan sesudah perubahan.</li>
+</ol>
+<h2>5. Kesalahan umum</h2>
+<ul><li>Kurung atau kurawal tidak berpasangan.</li><li>Nama variabel/function tidak konsisten.</li><li>Mengabaikan error di Console.</li></ul>
+<h2>6. Latihan bertingkat</h2>
+<ol><li>Kerjakan poin: async pada materi JavaScript Async Await.</li><li>Kerjakan poin: await pada materi JavaScript Async Await.</li><li>Kerjakan poin: error handling pada materi JavaScript Async Await.</li><li>Gabungkan JavaScript Async Await dengan kode lain dan buat hasil yang dapat dijalankan.</li></ol>
+<div class="box note"><b>🎯 Target:</b> Jangan berhenti ketika kode “jalan”. Pastikan kamu bisa menjelaskan kenapa kode tersebut bekerja.</div>
+</article>
