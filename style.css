@@ -147,7 +147,7 @@ button{font:inherit}
   .lesson-area h2{font-size:20px;margin-top:21px}
   .example{font-size:11px}
   .task{font-size:13px}
-  .playground{
+  .layout.playground-open .playground{
     position:relative;left:auto;right:auto;bottom:auto;top:auto;width:100%;height:auto;max-height:none;
     min-height:0;border-left:0;border-top:1px solid #283d47;order:3;box-shadow:none
   }

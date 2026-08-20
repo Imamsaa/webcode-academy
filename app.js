@@ -4,7 +4,7 @@
 
   const LESSONS = window.WEBCODE_LESSONS || [];
   const STORAGE_KEY = "webcode_github_pages_v1";
-  const defaultState = {course:"html", lessonIndex:0, completed:{}, code:{}};
+  const defaultState = {course:"html", lessonIndex:0, completed:{}, code:{}, playgroundOpen:true};
   let state = loadState();
   const materialCache = new Map();
 
@@ -28,6 +28,19 @@
 
   function currentLesson(){
     return courseLessons()[state.lessonIndex] || courseLessons()[0];
+  }
+
+  function applyPlaygroundState(){
+    const layout = document.getElementById("appLayout");
+    const toggle = document.getElementById("playgroundToggle");
+    const open = state.playgroundOpen !== false;
+
+    layout.classList.toggle("playground-open", open);
+    layout.classList.toggle("playground-closed", !open);
+
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "🎮 Tutup Playground" : "🎮 Buka Playground";
   }
 
   function codeFor(lessonId){
@@ -312,6 +325,16 @@
     });
   }
 
+  function setupPlaygroundToggle(){
+    const toggle = document.getElementById("playgroundToggle");
+    if(!toggle) return;
+    toggle.addEventListener("click", () => {
+      state.playgroundOpen = !(state.playgroundOpen !== false);
+      saveState();
+      applyPlaygroundState();
+    });
+  }
+
   function setupCourses(){
     document.querySelectorAll(".course").forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -348,6 +371,7 @@
     e.target.value = "";
   });
 
+  setupPlaygroundToggle();
   setupCourses();
   setupEditors();
   setupTabs();
